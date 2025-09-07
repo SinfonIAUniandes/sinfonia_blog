@@ -16,20 +16,20 @@ function App() {
     <div className="app-container">
       <nav className="glass sidebar p-4 shadow-md h-full">
         <ul>
-          <li><NavLink to="/" className="navlink">Home</NavLink></li>
-          <li><NavLink to="/posts" className="navlink">Posts</NavLink></li>
-          <li><NavLink to="/articles" className="navlink">Artículos</NavLink></li>
-          <li><NavLink to="/about" className="navlink">Sobre</NavLink></li>
-          <li><NavLink to="/cosa" className="navlink">Cosa</NavLink></li>
+          <li><NavLink to="/sinfonia_blog" className="navlink">Home</NavLink></li>
+          <li><NavLink to="/sinfonia_blog/posts" className="navlink">Posts</NavLink></li>
+          <li><NavLink to="/sinfonia_blog/articles" className="navlink">Artículos</NavLink></li>
+          <li><NavLink to="/sinfonia_blog/about" className="navlink">Sobre</NavLink></li>
+          <li><NavLink to="/sinfonia_blog/cosa" className="navlink">Cosa</NavLink></li>
         </ul>
       </nav>
       <main className="main-content h-full">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/posts" element={<Posts />} />
-          <Route path="/articles" element={<Articles />} />
-          <Route path="/cosa" element={<Cosa />} />
+          <Route path="/sinfonia_blog" element={<Home />} />
+          <Route path="/sinfonia_blog/about" element={<About />} />
+          <Route path="/sinfonia_blog/posts" element={<Posts />} />
+          <Route path="/sinfonia_blog/articles" element={<Articles />} />
+          <Route path="/sinfonia_blog/cosa" element={<Cosa />} />
         </Routes>
         <Footer />
       </main>
