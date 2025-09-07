@@ -1,0 +1,123 @@
+/* Tailwind base/components/utilities (asegúrate de tener tailwind configurado) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@tailwind utilities;
+body {
+  color: #111;
+}
+
+:root {
+  --aero-1: #a8e6cf; /* verde agua */
+  --aero-2: #dcedc1; /* pastel */
+  --accent: #ffd166; /* toque cálido */
+  --glass-bg: rgba(255,255,255,0.18);
+}
+
+/* Tipografía */
+.font-frutiger {
+  font-family: "Frutiger", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Fondo tipo aurora / gradiente suave */
+.aero-bg {
+  min-height: 100vh;
+}
+
+/* Glass card */
+.glass {
+  /* Fondo más transparente, blur más intenso y borde más visible */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 24px rgba(15,23,42,0.08), inset 0 0 0 1px rgba(255,255,255,0.1);
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  margin: 20px;
+}
+
+.glass:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(15,23,42,0.1);
+}
+
+/* Navegación */
+.navlink {
+  padding: 6px 10px;
+  border-radius: 10px;
+  transition: background .18s ease, transform .12s ease;
+}
+.navlink:hover {
+  background: rgba(255,255,255,0.06);
+  transform: translateY(-2px);
+}
+
+/* Call to action button */
+.cta-button {
+  background: linear-gradient(135deg, var(--aero-1), var(--aero-2));
+  color: #333;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-out;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  filter: brightness(1.05);
+}
+
+/* Prose para markdown (si usas tailwind typography plugin) */
+.prose {
+  /* si usas @tailwindcss/typography, agrega .prose; sino define estilos básicos */
+  line-height: 1.6;
+}
+.prose h1 { font-size: 1.6rem; font-weight: 700; margin-top: .6rem; margin-bottom: .4rem; color: #333;}
+.prose h2 { font-size: 1.25rem; font-weight: 600; margin-top: .6rem; margin-bottom: .4rem; color: #333;}
+.prose p { margin-bottom: .8rem; color: #374151; /* gray-700 */ }
+
+/* Pequeños toques Frutiger Aero: brillos y halos */
+.glass::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  inset: 0;
+  border-radius: 14px;
+  background: linear-gradient(120deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+  mix-blend-mode: overlay;
+}
+
+
+/* App.css */
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 240px;
+  padding-top: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 16px 0;
+}
+
+.sidebar a {
+  text-decoration: none;
+  padding: 8px 16px;
+  display: block;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
