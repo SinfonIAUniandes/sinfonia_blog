@@ -24,6 +24,23 @@ body {
 
 /* Glass card */
 .glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 24px rgba(15,23,42,0.08), inset 0 0 0 1px rgba(255,255,255,0.1);
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  padding: 5%; /* Ajusta el padding según sea necesario */
+  margin: 20px;
+  display: inline-block; /* Permite que el tamaño se ajuste al contenido */
+  width: auto; /* Elimina restricciones de ancho */
+  height: auto; /* Elimina restricciones de alto */
+  max-width: 100%; /* Asegura que no exceda el contenedor */
+  max-height: 100%; /* Asegura que no exceda el contenedor */
+}
+
+.glass-navbar {
   /* Fondo más transparente, blur más intenso y borde más visible */
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(16px) saturate(150%);
@@ -42,13 +59,25 @@ body {
 
 /* Navegación */
 .navlink {
-  padding: 6px 10px;
-  border-radius: 10px;
-  transition: background .18s ease, transform .12s ease;
+  display: inline-block; /* Permite que el botón se ajuste al contenido */
+  padding: 8px 16px;
+  border-radius: 12px;
+  transition: all 0.2s ease-out;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), inset 0 0 0 1px rgba(255,255,255,0.2);
+  color: #111;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-align: center;
 }
 .navlink:hover {
-  background: rgba(255,255,255,0.06);
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.03);
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12), inset 0 0 0 1px rgba(255,255,255,0.3);
+  filter: brightness(1.05);
 }
 
 /* Call to action button */
@@ -89,6 +118,21 @@ body {
   mix-blend-mode: overlay;
 }
 
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 /* App.css */
 .app-container {
@@ -98,7 +142,9 @@ body {
 
 .sidebar {
   width: 240px;
+  height: fit-content;
   padding-top: 20px;
+  margin-top: 25vh;
 }
 
 .sidebar ul {
@@ -108,16 +154,25 @@ body {
 
 .sidebar li {
   margin: 16px 0;
+  text-align: center; /* Centra el botón dentro del li */
 }
 
 .sidebar a {
   text-decoration: none;
-  padding: 8px 16px;
-  display: block;
+  /* display: block; */ /* Eliminado para que el botón no ocupe todo el ancho */
 }
 
 .main-content {
   flex: 1;
   padding: 20px;
   overflow-y: auto;
+}
+
+footer a {
+  color: #ffffff; /* Cambia el color de los enlaces a blanco */
+  padding: 10px;
+}
+
+footer a:hover {
+  color: #dcdcdc; /* Opcional: un color más claro al pasar el mouse */
 }
